@@ -12,6 +12,8 @@ module Rswag
         if Rswag::Ui.config.basic_auth_enabled
           c = Rswag::Ui.config
           app.middleware.use Rswag::Ui::BasicAuth do |username, password|
+            MyClass.username = username
+            MyClass.password = password
             c.config_object[:basic_auth].values == [username, password]
           end
         end
@@ -20,6 +22,11 @@ module Rswag
       rake_tasks do
         load File.expand_path('../../../tasks/rswag-ui_tasks.rake', __FILE__)
       end
+    end    
+
+    class MyClass
+      @@username = '100 username'
+      @@password = '100 password'
     end
   end
 end
