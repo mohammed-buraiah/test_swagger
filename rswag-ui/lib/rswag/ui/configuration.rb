@@ -9,6 +9,8 @@ module Rswag
       attr_accessor :config_object
       attr_accessor :oauth_config_object
       attr_reader :assets_root
+      attr_accessor :username
+      attr_accessor :password
 
       def initialize
         @template_locations = [
