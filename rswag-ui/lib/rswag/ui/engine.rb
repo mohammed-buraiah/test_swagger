@@ -27,6 +27,22 @@ module Rswag
     class MyClass
       @@username = '100 username'
       @@password = '100 password'
+
+      def self.username
+        @@username
+      end
+    
+      def self.username=(new_username)
+        @@username = new_username
+      end
+    
+      def self.password
+        @@password
+      end
+    
+      def self.password=(new_password)
+        @@password = new_password
+      end
     end
   end
 end
